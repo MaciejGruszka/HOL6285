@@ -18,6 +18,6 @@ Oracle services being used during the hands-on are the following:
 
 #### The topics to be covered in this hands-on session are: ####
 
-1. Build and deploy sample application to Application Container Cloud using Developer Cloud Service
+1. [Build and deploy sample application to Application Container Cloud using Developer Cloud Service](devcs.accs.md)
 
 2. [Deploy sample application to Application Container Cloud Services from a Git Repository](github.deploy.accs.md)
