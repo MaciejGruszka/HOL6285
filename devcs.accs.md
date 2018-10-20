@@ -12,12 +12,13 @@ The Creditscore demo application has [AngularJS](https://angularjs.org/) UI and 
 ### Prerequisites ###
 
 - An [Oracle Cloud](https://cloud.oracle.com) account with access to Oracle Application Container Cloud Service
-- [Oracle Developer Cloud Service setup](devcs.setup.md)
 
 ----
-#### Setup Developer Cloud Service Build Executor VM ####
+#### New Developer Cloud Service Setup ####
 
-In order to execute application build Developer Cloud Service uses compute instances what needs to be prepared before build job creation. Creditscore application is built using Java SE and defined in Maven project. To build deployable application artifact you need Java/Maven/Git capable build executor VM. To have such VM instance first you need to define VM template what you can instantiate for Developer Cloud Service.
+Oracle Developer Cloud Service now supports integration with Oracle Cloud Infrastructure Compute Classic and Oracle Cloud Infrastructure Object Storage Classic.
+
+You can create virtual machines (VMs) on Oracle Cloud Infrastructure Compute Classic and use them to run builds of your projects. The archived build artifacts are stored on the containers of Oracle Cloud Infrastructure Object Storage Classic.
 
 If you haven't opened Developer Service Console yet then visit [https://cloud.oracle.com](https://cloud.oracle.com) and sign in using your credentials. Click **Sign In**.
 
@@ -27,7 +28,7 @@ Enter your cloud account name and click **My Services**.
 
 ![](images/devcs.accs/00.cloud.account.png)
 
-Enter the cloud account credentials. Before you click **Sign In** please note your identity domain id what can be found in the URL belongs to authorization page. This id is necessary later to define Application Container Cloud connection.
+Enter the cloud account credentials. Before you click **Sign In** please note your identity domain id what can be found in the URL belongs to authorisation page. This id is necessary later to define Application Container Cloud connection.
 
 ![](images/devcs.accs/00.cloud.credentials.png)
 
@@ -38,6 +39,68 @@ Select **Developer Cloud Service** in the left menu.
 Select your Developer Cloud Service instance and click the menu icon on the right side and select **Access to console**.
 
 ![](images/devcs.accs/00.devcs.access.console.png)
+
+If you don't have already a Developer Cloud Service instance than you have to create instance, click on **Create Instance** button:
+
+![](images/DevCS-setup/DevCS-create-inst.png)
+
+Only parameter you should define is an instance name, click **Next** and **Confirm**:
+
+![](images/DevCS-setup/DevCS-inst-name.png)
+
+After few minutes instance will be ready and you can access to Developer Cloud Service instance.
+
+![](images/DevCS-setup/DevCS-access.png)
+
+At the first access the Developer Cloud Service Instance warn you to configure Compute and Storage.
+
+![](images/devcs.init/devcs.first.console.png)
+
+##### Configure a connection to Oracle Cloud Infrastructure Storage Classic #####
+
+To configure storage click the **Storage** link in the warning message or click the user icon on the top right corner, select **Organisation** then click **Storage** tile.
+
+![](images/devcs.init/devcs.select.storage.png)
+
+Click **New Configuration**.
+
+![](images/devcs.init/new.storage.png)
+
+In order to collect information needed for Storage setup go back to Oracle Cloud Services dashboard and find Storage Classic service and click **View Details**.
+
+![](images/DevCS-setup/SrorageClassic-view-details.png)
+
+Here you can find related Storage information:
+
+![](images/DevCS-setup/DevCS-StorageClassic-connect.png)
+
+Once you have the necessary parameters go back to the new configuration of Storage connection and fill the necessary parameters. Username and Password is your Oracle Cloud credentials. (Username: *cloud.admin*). The Storage configuration should look similar:
+
+![](images/DevCS-setup/DevCS-StorageClassic-config.png)
+
+Click **Save**.
+
+##### Configure a connection to Oracle Cloud Infrastructure Compute Classic #####
+
+To use build executor first you have to configure Compute (Classic) access for Developer Cloud Service where the build VM can run.
+
+To create Compute (Classic) service access click **Virtual Machines** in the left menu and click **+Configure Compute Account**. (You can use the User icon on the top right corner to navigate to Virtual Machines page. Click user icon, select **Organisation** then click **Virtual Machines** tile.)
+
+![](images/devcs.init/new.compute.png)
+
+In order to collect Compute (Classic) information, go back to the Oracle Cloud Service dashboard and find Compute Classic service and click **View Details** where you can find related Compute information:
+
+![](images/DevCS-setup/DevCS-ComputeClassic-view-details.png)
+
+Once you have the necessary parameters go back to the new configuration of Compute Account configuration and fill the necessary parameters. Username and Password is your Oracle Cloud credentials. (Username: *cloud.admin*) The Compute Account configuration should look similar:
+
+![](images/DevCS-setup/DevcCS-ComputeClassic-config.png)
+
+Click **Save**. The Developer Cloud Service instance configuration is done.
+
+#### Setup Developer Cloud Service Build Executor VM ####
+
+In order to execute application build Developer Cloud Service uses compute instances what needs to be prepared before build job creation. Creditscore application is built using Java SE and defined in Maven project. To build deployable application artifact you need Java/Maven/Git capable build executor VM. To have such VM instance first you need to define VM template what you can instantiate for Developer Cloud Service.
 
 In the Oracle Developer Cloud Service user interface, click the user name in the top-right corner and select **Organization**.
 
