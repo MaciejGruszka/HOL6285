@@ -11,7 +11,7 @@ The Creditscore demo application has [AngularJS](https://angularjs.org/) UI and 
 
 ### Prerequisites ###
 
-- An [Oracle Cloud](https://cloud.oracle.com) account with access to Oracle Application Container Cloud Service
+- An [Oracle Cloud](https://cloud.oracle.com) account with access to Oracle Application Container Cloud Service. (Instructor will assign account for you.)
 
 ----
 #### New Developer Cloud Service Setup ####
@@ -66,7 +66,11 @@ Click **New Configuration**.
 
 ![](images/devcs.init/new.storage.png)
 
-In order to collect information needed for Storage setup go back to Oracle Cloud Services dashboard and find Storage Classic service and click **View Details**.
+In order to collect information needed for Storage setup go back to Oracle Cloud Services dashboard. Click **Dashboard** and if you can not see *Storage Classic* tile then click **Customize Dashboard** and set *Show* at *Storage Classic* dashboard item.
+
+![](images/devcs.init/go.dashboard.storage.png)
+
+On the *Storage Classic* service click the menu and select **View Details**.
 
 ![](images/DevCS-setup/SrorageClassic-view-details.png)
 
@@ -88,7 +92,11 @@ To create Compute (Classic) service access click **Virtual Machines** in the lef
 
 ![](images/devcs.init/new.compute.png)
 
-In order to collect Compute (Classic) information, go back to the Oracle Cloud Service dashboard and find Compute Classic service and click **View Details** where you can find related Compute information:
+In order to collect Compute (Classic) information, go back to the Oracle Cloud Service dashboard and find *Compute Classic* service click menu and select **View Details**. If you can't find the *Compute Classic* tile click **Customise Dashboard** and set *Show* for *Compute Classic* entry.
+
+![](images/devcs.init/compute.classic.details.png)
+
+On the details page you can find related Compute information:
 
 ![](images/DevCS-setup/DevCS-ComputeClassic-view-details.png)
 
@@ -153,7 +161,11 @@ Check the new entry in the Build VMs list. Now the Build VM is ready to use.
 
 #### Create Developer Cloud Service project ####
 
-Open or go back to the Developer Cloud Service instance console page. To create a new project for Creditscore application click **+New Project**.
+Go back to the Developer Cloud Service instance console page. If you are still on the DevCS Organization page click the **Developer Cloud Service** header.
+
+![](images/devcs.accs/00.go.devcs.png)
+
+To create a new project for Creditscore application click **+New Project**.
 
 ![](images/devcs.accs/01.new.project.png)
 
